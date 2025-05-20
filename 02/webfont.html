@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
     <style>
+        
         @font-face {
             font-family: '오버워치';
             src: url('fonts/koverwatch.woff');
         }
         .after-font {font-family: '오버워치';}
+        .after-font2 {font-family: 'NanumBarunGothic'; font-display: block;}
+
+        /* 
+            font, img, mp4 등에서 발생하는 글리치
+            특히 폰트관련에서 FOIT(Flash Of Invisible Text)
+        */
+        /* #rgb #rrggbb
+            
+            #123 #112233
+            256 * 256 * 256
+            2^8 *3
+            2^8 * 3
+            2^24 24bit (+alpha) 투명도 
+         */
 
     </style>
 </head>
 <body>
     <h1>폰트 적용전 텍스트</h1>
     <h1 class="after-font">폰트 적용후 텍스트</h1>
+    <h1 class="after-font2">폰트 예제</h1>
 </body>
 </html>
