@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sample{
+            0% {background: firebrick; transform: translate(0,0);}
+            50% {background: cornflowerblue; transform: translate(30px,20px);}
+            100% {background: forestgreen; transform: translate(0,0);}
+        }
+
+        @keyframes rotation{
+            from {transform: rotateZ(0deg);}
+            to {transform: rotateZ(360deg);}
+        }
+
+        .test {
+            width: 100px; height: 100px;
+            padding: 10px; background: firebrick;
+            animation-name: sample;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        img {animation: rotation .1s linear infinite;}
+    </style>
+</head>
+<body>
+    <p class="test">Animation</p>
+
+    <p><img src="img/hos.webp" alt="히오스"></p>
+</body>
+</html>

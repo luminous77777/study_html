@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .man {display: inline-block; margin: 10px;}
+        .head {border: 1px solid transparent; line-height: 100px; height: 100px; width: 100px; border-radius: 100px;}
+        .head1 { background-color: blue;}
+        .head2 { background-color: red; }
+        .body {
+            height: 0px;
+            width: 0px;
+            border: 50px solid;
+            margin-top : 15px;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        .body1{
+            border-top: 100px solid;
+            border-bottom: none;
+            border-top-color: blue;
+            
+        }
+
+        .body2 {
+            border-top: none;
+            border-bottom : 100px solid red;
+}
+    </style>
+    
+</head>
+<body>
+    <div class="man">
+        <div class="head head1"></div>
+        <div class="body body1"></div>
+    </div>
+    <div class="man">
+        <div class="head head2"></div>
+        <div class="body body2"></div>
+    </div> 
+</body>
+</html>
