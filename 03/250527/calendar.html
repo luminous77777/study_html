@@ -26,7 +26,7 @@
         function drawCalander(){
             const date = new Date(); // 날짜 객체 생성. 현재의 날짜
             const year = date.getFullYear(); // date 4자리 년도 값을 가져온다
-            const month = date.getMonth();; //월 값을 가져온다
+            const month = date.getMonth(); //월 값을 가져온다
 
             const allMonths = [31,28,31,30,31,30,31,31,30,31,30,31]; // 월의 마지막 날 세팅
             const lastDate = allMonths[month];
@@ -36,15 +36,22 @@
 
             date.setDate(1);  //현재의 일을 1일로 수정
             const firstDay = date.getDay(); //1일의 요일 정보를 가져온다
-            Number(firstDay);
-
 
             let str = "<tr>";
-            for(let i = (1 - firstDay)  ; i <= 35; i++){
-                str += `<td>${i <= 31 && i>0 ? i : ''}</td>`;
-                if(i % 7 == Number(firstDay)-1){
+
+            let count = 1;
+
+            for(let i = 1 - firstDay  ; ; i++){
+                str += `<td>`;
+                str += i <= lastDate && i >= 1 ? i : '';
+                str += `</td>`;
+                count++;
+                console.log(count-1, i);
+
+                if(lastDate <=i && (count-1) % 7 == 0) break;
+                if(i % 7 == (7 - firstDay   ) % 7 ){
                     str += "</tr><tr>"
-                }
+                    }
             }
             str +="</tr>"
             document.querySelector("table tbody").innerHTML = str;
