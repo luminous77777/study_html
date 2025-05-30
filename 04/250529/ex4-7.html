@@ -12,10 +12,32 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
     <script>
         $(function() {
-            $("#m1 > p:contains('html')").css("border", "4px solid red");
-            $("#m1 > p:empty").css("border", "4px solid orange"); //자식요소(노드포함)가 없는(비어있는거)
-            $("#m2 > span:parent").css("border", "4px solid yellow"); //자식요소가 있는(내가 부모인)
-            $("#m3 > section:has(article)").css("border", "4px solid green"); //article을 가진 section
+            // $("#m1 > p:contains('html')").css("border", "4px solid red");
+            // $("#m1 > p:empty").css("border", "4px solid orange"); //자식요소(노드포함)가 없는(비어있는거)
+            // $("#m2 > span:parent").css("border", "4px solid yellow"); //자식요소가 있는(내가 부모인)
+            // $("#m3 > section:has(article)").css("border", "4px solid green"); //article을 가진 section
+            $("#m1")
+                .find("> p:contains('html')").css("border", function () {return "4px solid red"}) //함수도 넣을수있다
+            .end()
+                .find("> p:empty").css("border", "4px solid orange")
+            .end() // m1을 선택
+            .next() //m2가 선택; 
+                    .find("> span:parent").css({border : "4px solid yellow"})  //object 타입의 setter
+            .end().css("color","red")
+            .next()
+                .find("> section:has(article)").css("border", () => "4px solid green"); //함수도 들어갈수 있으니 애로우 펑션도 가능
+            console.log("----------------------------------------------------");
+            $("div").each(function(i,j){
+                // console.log(i,j);
+                // console.log(j,$(j).is("#m1")); //id가 m1 인가?를 물어본다
+                // console.log(j,$(j).is(":first-child")); //첫번째 인가?
+                $(this).css("border-color");
+                console.log($(this).find("> *").css("border-color"));
+            });
+            const obj = ['red', 'green', 'blue']
+            $.each(obj, function(i , j) {
+                console.log(i, j); //인덱스와 키 출력
+            })
         })
     </script>
 

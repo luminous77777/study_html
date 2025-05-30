@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
+    <script>
+        $(function() {
+            $("#all").change(function(){
+                // console.log($(this).attr("checked"));
+                console.log($(this).prop("checked"));
+
+                $(":checkbox").prop("checked", $(this).prop("checked"));
+            });
+            $("form").submit(function(){
+                    event.preventDefault();
+                    // console.log($("[name=hobby]").filter(":checked").val());
+                    const hobbys = [];
+                    $("[name=hobby]").filter(":checked").each(function(){
+                        hobbys.push(this.value);
+                    }).parent().css("color", "red");
+                    console.log(hobbys , $("[name=hobby]").filter(":checked").length); //체크한 내용과 체크한 개수 확인
+                });
+            $(":checkbox:not(#all)").change(function() {
+                let flag = false;
+                $(":checkbox:not(#all)").each(function(){
+                    // if()
+                })
+                console.log($(this).val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>취미생활</legend>
+            <p><label>전체 선택<input type="checkbox" id="all"></label></p>
+            <hr>
+            <p><label>취미1<input type="checkbox" name="hobby" value="hobby1"></label></p>
+            <p><label>취미2<input type="checkbox" name="hobby" value="hobby2"></label></p>
+            <p><label>취미3<input type="checkbox" name="hobby" value="hobby3"></label></p>
+            <p><label>취미4<input type="checkbox" name="hobby" value="hobby4"></label></p>
+            <p><label>취미5<input type="checkbox" name="hobby" value="hobby5"></label></p>
+            <p><label>취미6<input type="checkbox" name="hobby" value="hobby6"></label></p>
+            <p><label>취미7<input type="checkbox" name="hobby" value="hobby7"></label></p>
+            <p><label>취미8<input type="checkbox" name="hobby" value="hobby8"></label></p>
+        </fieldset>
+        <button>전송</button>
+    </form>
+</body>
+</html>

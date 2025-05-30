@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
     <script>
@@ -13,6 +13,15 @@
             $("input:checked + label").css("background","green");
             $("option:selected").css("background","blue");
             $("textarea:disabled").css("background","pink");
+
+            // console.log($("div").find("label").text());
+            console.log($("div").find(function(){
+                return "label";
+            }).text());
+
+            $("div:eq(0)")
+                .add("div:eq(1)").css("border", "1px solid")
+            .end().css("background","gray")
         });
     </script>
 </head>
