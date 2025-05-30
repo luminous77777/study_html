@@ -23,11 +23,10 @@
                     console.log(hobbys , $("[name=hobby]").filter(":checked").length); //체크한 내용과 체크한 개수 확인
                 });
             $(":checkbox:not(#all)").change(function() {
-                let flag = false;
-                $(":checkbox:not(#all)").each(function(){
-                    // if()
-                })
-                console.log($(this).val());
+                const total = $(":checkbox:not(#all)").length;
+                const checked = (":checkbox:not(#all):checked").length;
+
+                $("#all").prop("checked", total === checked);
             });
         });
     </script>
