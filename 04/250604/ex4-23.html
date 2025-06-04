@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding:0;
+        }
+        div {
+            padding: 20px;
+            margin: 20px;
+            background: #f60;
+            border: 10px solid;
+        }
+    </style>
+    <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
+    <script>
+        // jQuery의 함수 중 setter역할은 chaining이 가능
+        $(function(){
+            $("div").width(150).height(150);
+            console.log(`width : ${$("div").width()}`);
+            console.log(`height : ${$("div").height()}`);
+            console.log(`innerWidth : ${$("div").innerWidth()}`); //content + padding
+            console.log(`innerHeight : ${$("div").innerHeight()}`);
+            console.log(`outerWidth1 : ${$("div").outerWidth()}`); //content + padding + border
+            console.log(`outerHeight1 : ${$("div").outerHeight()}`);
+            console.log(`outerWidth2 : ${$("div").outerWidth(true)}`); //content + padding + border + margin //jQuery에 대한 의존성이 강함
+            console.log(`outerHeight2 : ${$("div").outerHeight(true)}`);
+
+            //dom 구조
+            console.log($("div").get(0));
+            console.log($("div")[0]);
+            console.log($("div").get(0) === document.querySelector("div"));
+
+            const div = $("div").get(0);
+
+            console.log(div.clientHeight);//inner 190
+            console.log(div.offsetHeight);//outer 210
+        })
+    </script>
+</head>
+<body>
+    <div>내용</div>
+</body>
+</html>

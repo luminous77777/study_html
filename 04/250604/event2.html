@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
+    <script>
+        $(function() {
+            const f = function(){
+                console.log($(this).text());
+            }
+            $("h1").click(f).css("color","red").click().click().click();
+
+            $("h1").on("click", function() {
+                console.log("official event bind");
+            });
+
+            $("h1").trigger("click");
+        })
+    </script>
+</head>
+<body>
+    <h1>h1이야</h1>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
+    <script>
+        $(function() {
+            $("<h1>추가된 녀석</h1>").appendTo("body");
+            // $("h1").click(function (){ console.log($(this).text()); })
+            $("button").click(function() {
+                $("<h1>버튼으로 추가된 녀석</h1>").appendTo("body");
+                // $("h1").click(function() {console.log($(this).text());})
+            })
+
+            const f = function(){ //이벤트 핸들러에 이름을 주었다
+                console.log(event.type);
+            }
+
+            $("button").on("click dblclick", f);
+
+            $("button").off("click",f);
+
+            $("body").on("click", "h1", function(){
+                console.log($(this).text());
+            });
+
+            $("h3").on("click", function() { //one로 만들수 있다
+                console.log($(this).text());
+                $(this).off("click");
+            })
+
+            $("h3").one("click", function(){
+                console.log("one으로 콘솔");
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <button>추가</button>
+    <h1>원래 있던 녀석</h1>
+    <h3>나는 h3이야</h3>
+</body>
+</html>
