@@ -4,8 +4,9 @@
         a {text-decoration: none; columns: #222;}
         header, footer {padding: 1em; background: #222; color: #eee; text-align: center;}
 
+        .resize-none {resize: none;}
         .container {width: 1200px; margin: 0 auto;}
-
+        .cke_notifications_area {display: none !important;}
         /* nav */
         nav {background: #eee;}
         nav ul {margin: 0; padding: 0;}
@@ -17,7 +18,7 @@
         /* main */
         main {padding: 1em; min-height: calc(100vh - 256px);}
         /* 121 112 */
-        main > * {padding: 16px; box-sizing: border-box; float: left;}
+        main > * {padding: 16px; box-sizing: border-box;}
         main .content { width: 768px; margin-right: 16px;}
         main aside {height: 300px; width: 384px;}
 
