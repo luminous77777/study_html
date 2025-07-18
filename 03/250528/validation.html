@@ -64,6 +64,8 @@
                 const name = input.id;
                 const msgClassList = input.closest("div").querySelector(".valid-msg").classList;
 
+                // console.log(msgClassList);
+
                 if(name === "pwck"){
                     const valid = document.querySelector("#pw").value === input.value;
                     msgClassList.toggle("active", !valid);
@@ -85,7 +87,6 @@
         });
 
         document.querySelector(".join-frm").addEventListener("submit", e =>{
-            
             let isValid = true;
             inputs.forEach(input =>{
                 const valid = validateField(input);
